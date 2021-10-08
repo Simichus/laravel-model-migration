@@ -14,5 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('home');
+})->name('home');
+
+Route::get('/packages', 'PackageController@index')->name('packages.index');
+Route::get('/packages/{id}', 'PackageController@detail')->name('packages.detail');
